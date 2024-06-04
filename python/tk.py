@@ -1,0 +1,32 @@
+from tkinter import *
+root=Tk()
+root.geometry("400x400")
+namemy=StringVar()
+passmy=StringVar()
+radVar = ""
+def submit():
+    name=namemy.get()
+    print("The Registered Student Name")
+    print("------------------------------") 
+    print("name is : " + name)
+    namemy.set("")
+    passmy.set("")
+
+name=Label(root, text = 'Username',font=('calibre',10, 'bold'))
+name1=Entry(root,textvariable = namemy,font=('calibre',10,'normal'))
+pas=Label(root, text = 'Password', font = ('calibre',10,'bold'))
+pas1=Entry(root, textvariable = passmy, font = ('calibre',10,'normal'),show='*')
+
+gen=Label(root, text = ' Select Gender:',font = ('calibre',10,'bold'))
+r1=Radiobutton(root, text = "Male",variable=radVar,value=1)
+r2 = Radiobutton(root, text = "Female",variable=radVar,value =2)
+btn=Button(root,text ='Submit',command= submit)
+name.grid(row=1,column=1)
+name1.grid(row=1,column=2)
+pas.grid(row=2,column=1)
+pas1.grid(row=2,column=2)
+gen.grid(row=3,column=1)
+r1.grid(row=5,column=2) 
+r2.grid(row=5,column=3) 
+btn.grid(row=10,column=1)
+root.mainloop()
